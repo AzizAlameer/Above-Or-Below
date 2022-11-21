@@ -1,0 +1,386 @@
+.container {
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+.line-in-middle {
+  left: 50%;
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent calc(50% - 0.81px),
+    black calc(50% - 0.8px),
+    black calc(50% + 0.8px),
+    transparent calc(50% + 0.81px),
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+@media screen and (max-width: 60em) {
+  .line-in-middle {
+    display: none;
+  }
+}
+
+.column1 {
+  box-sizing: border-box;
+  border-right: 2px solid black;
+  color: white;
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.column2 {
+  box-sizing: border-box;
+  color: white;
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.circle {
+  z-index: 1;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  position: absolute;
+  left: 50%;
+  align-self: center;
+  transform: translate(-50%, 0);
+  background-color: #7366ef;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.iconlayer {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100px;
+  position: absolute;
+  align-self: center;
+}
+.iconlayer2 {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 100%;
+  width: 100px;
+  right: 0;
+  align-self: center;
+}
+
+.iconcircle {
+  z-index: 1;
+
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #7366ef;
+  border-radius: 50%;
+}
+
+.label {
+  z-index: 1;
+
+  margin-top: 2px;
+}
+
+.hscore {
+  z-index: 1;
+
+  color: #7366ef;
+  font-weight: bold;
+  position: absolute;
+  align-self: flex-end;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.score {
+  z-index: 1;
+
+  color: #7366ef;
+  font-weight: bold;
+  position: absolute;
+  align-self: flex-end;
+  font-size: 2rem;
+  right: 0;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.btncontainer {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  right: 22%;
+  bottom: 12%;
+}
+
+.btn {
+  z-index: 1;
+  color: black;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  border: 2px solid #7366ef;
+  background-color: #7366ef;
+  width: 130px;
+  height: 40px;
+  border-radius: 15px;
+}
+
+.game-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.game {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.game-scroller {
+  width: 100%;
+  height: 150%;
+  display: block;
+  transform: translate3d(0, 0, 0);
+}
+
+@media screen and (orientation: landscape) {
+  .game-scroller {
+    width: 150%;
+    height: 100%;
+  }
+}
+
+.game-scroller--win {
+  transition: transform 0.3s ease-out 0.3s;
+  transform: translate3d(0, -33.333%, 0);
+}
+
+@media screen and (orientation: landscape) {
+  .game-scroller--win {
+    transform: translate3d(-33.333%, 0, 0);
+  }
+}
+
+.pack-term {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 33.33333%;
+  text-align: center;
+  background-size: cover;
+  background-position: center center;
+}
+
+@media screen and (min-width: 60em) {
+  .pack-term {
+    width: 33.33333%;
+    height: 100%;
+    float: left;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .pack-term {
+    width: 33.33333%;
+    height: 100%;
+    float: left;
+  }
+}
+
+.versus-block {
+  z-index: 1;
+  position: absolute;
+  height: 3.125rem;
+  width: 3.125rem;
+  border-radius: 50%;
+  background: #7366ef;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: table;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.versus-block--initial {
+  transform: scale(0);
+}
+
+@media screen and (min-width: 28.75em) {
+  .versus-block {
+    height: 3.4375rem;
+    width: 3.4375rem;
+  }
+}
+
+@media screen and (min-width: 41.25em) {
+  .versus-block {
+    height: 3.75rem;
+    width: 3.75rem;
+  }
+}
+
+@media screen and (min-width: 63.688em) {
+  .versus-block {
+    height: 6.25rem;
+    width: 6.25rem;
+  }
+}
+
+.versus-block__text {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  color: #000000;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 28.75em) {
+  .versus-block__text {
+    font-size: 1.375rem;
+  }
+}
+
+@media screen and (min-width: 41.25em) {
+  .versus-block__text {
+    font-size: 2rem;
+  }
+}
+
+.versus-block__overlay {
+  position: absolute;
+  content: " ";
+  bottom: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  top: 100%;
+  height: 100%;
+}
+.versus-block__overlay.done {
+  position: absolute;
+  content: " ";
+  bottom: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  top: 0;
+  height: 100%;
+}
+.versus-block--win .versus-block__overlay.done {
+  background: #59ac51;
+  top: 100%;
+  transition: all 0.3s ease-out;
+}
+.versus-block--win .versus-block__overlay {
+  background: #59ac51;
+  top: 0;
+  transition: all 0.3s ease-out;
+}
+.versus-block--loss .versus-block__overlay.done {
+  background: #c75555;
+  top: 100%;
+  transition: all 0.3s ease-out;
+}
+
+.versus-block--loss .versus-block__overlay {
+  background: #c75555;
+  top: 0;
+  transition: all 0.3s ease-out;
+}
+
+.versus-block__icon {
+  background-repeat: no-repeat;
+  height: 25px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  opacity: 0;
+  transition: opacity 0.3s linear;
+  transition-delay: 0.3s;
+  transform-origin: center center;
+  transform: translate(-50%, -50%);
+  width: 25px;
+}
+.versus-block__icon.done {
+  background-repeat: no-repeat;
+  height: 25px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  opacity: 1;
+  transition: opacity 0.1s linear;
+  transition-delay: 0.1s;
+  transform-origin: center center;
+  transform: translate(-50%, -50%);
+  width: 25px;
+}
+
+.versus-block--win .versus-block__icon.done {
+  background-image: url("./tick.svg");
+  background-size: 50px;
+  height: 50px;
+  width: 50px;
+  opacity: 0;
+}
+.versus-block--win .versus-block__icon {
+  background-image: url("./tick.svg");
+  background-size: 50px;
+  height: 50px;
+  width: 50px;
+  opacity: 1;
+}
+
+.versus-block--loss .versus-block__icon.done {
+  background-image: url("./cross.svg");
+  background-size: 50px;
+  height: 50px;
+  width: 50px;
+  opacity: 0;
+}
+.versus-block--loss .versus-block__icon {
+  background-image: url("./cross.svg");
+  background-size: 50px;
+  height: 50px;
+  width: 50px;
+  opacity: 1;
+}

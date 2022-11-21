@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="line-in-middle"></div>
+  <span class="hscore">High Score: 0</span>
+  <span class="score">Score: 0</span>
+  <div class="btncontainer">
+    <button class="btn" (click)="onClick('above')">Above</button>
+    <span [ngStyle]="{ 'font-size': '0.9rem', color: '#7366ef' }">Or</span>
+    <button class="btn" (click)="onClick('below')">Bellow</button>
+  </div>
+  <div class="iconlayer">
+    <div class="iconcircle">
+      <fa-icon
+        [icon]="faHeart"
+        [ngStyle]="{ color: 'black' }"
+        size="2x"
+      ></fa-icon>
+    </div>
+    <span class="label">{{prevvid?.likes}}</span>
+    <div class="iconcircle">
+      <fa-icon
+        [icon]="faShare"
+        [ngStyle]="{ color: 'black' }"
+        size="2x"
+      ></fa-icon>
+    </div>
+    <span class="label">{{prevvid?.shares}}</span>
+    <div class="iconcircle">
+      <fa-icon
+        [icon]="faCommentDots"
+        [ngStyle]="{ color: 'black' }"
+        size="2x"
+      ></fa-icon>
+    </div>
+    <span class="label">{{prevvid?.comments}}</span>
+  </div>
+  <div class="iconlayer2">
+    <div class="iconcircle">
+      <fa-icon
+        [icon]="faHeart"
+        [ngStyle]="{ color: 'black' }"
+        size="2x"
+      ></fa-icon>
+    </div>
+    <span class="label">{{currentinfo('likes')}}</span>
+    <div class="iconcircle">
+      <fa-icon
+        [icon]="faShare"
+        [ngStyle]="{ color: 'black' }"
+        size="2x"
+      ></fa-icon>
+    </div>
+    <span class="label">{{currentinfo('shares')}}</span>
+    <div class="iconcircle">
+      <fa-icon
+        [icon]="faCommentDots"
+        [ngStyle]="{ color: 'black' }"
+        size="2x"
+      ></fa-icon>
+    </div>
+    <span class="label">{{currentinfo('comments')}}</span>
+  </div>
+  <div class="game-container">
+    <div class="game">
+      <div class="game-scroller game-scroller--{{ scroller }}">
+        <div class="pack-term" *ngFor="let vid of vidsarr; index as i">
+          <iframe
+            id="{{ i }}"
+            allow=""
+            [src]="
+              'https://www.tiktok.com/static/profile-video?id=' +
+                vid.id +
+                '&hide_author=1&utm_campaign=tt4d_open_api&utm_source=awbx37vxswqcvsf6'
+                | safe
+            "
+            frameborder="0"
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="versus-block-wrapper">
+        <div class="versus-block versus-block--{{ vsblock }}">
+          <div class="versus-block__text">vs</div>
+          <div class="versus-block__overlay {{ vsblockoverlay }}"></div>
+          <div class="versus-block__icon {{ vsblockoverlay }}"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

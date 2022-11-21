@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    font-family: monospace;
+    background-color: #161d31;
+    margin: 0;
+    padding: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+ }
